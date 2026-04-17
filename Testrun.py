@@ -5,9 +5,9 @@ import json
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-PRISM_IP = "172.31.1.12"
-USERNAME = "dayo"
-PASSWORD = "dennis1234"
+PRISM_IP = ""
+USERNAME = ""
+PASSWORD = ""
 BASE_URL = f"https://{PRISM_IP}:9440/api/nutanix/v2.0"
 AUTH = HTTPBasicAuth(USERNAME, PASSWORD)
 
@@ -47,7 +47,7 @@ def create_vm(spec):
                     "device_index": 0
                 },
                 "vm_disk_create": {
-                    "storage_container_uuid": "459fc5bc-4295-4677-a0a5-5b591bff5025",
+                    "storage_container_uuid": "",
                     "size": spec["disk_size"]
                 }
             }
@@ -56,7 +56,7 @@ def create_vm(spec):
         # ── NETWORK (required) ─────────────────────────────
         "vm_nics": [
             {
-                "network_uuid": "ec7b2eb5-edd5-4b99-8090-5bd38a723ec6"
+                "network_uuid": ""
             }
         ]
     }
